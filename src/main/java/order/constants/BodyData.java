@@ -9,5 +9,4 @@ public class BodyData {
     public static final String PHONE = "8-800-555-35-35";
     public static final String DELIVERY_DATE = "2020-06-06";
     public static final String COMMENT = "Бабушка технарь, дед гуманитарий, я изобрел универсальный комментарий";
-    public static final String NON_EXISTENT_LOGIN = "12j019vun12n381v2d12bu1ibd1m2po[1";
 }

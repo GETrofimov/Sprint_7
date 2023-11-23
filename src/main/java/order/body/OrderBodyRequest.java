@@ -12,6 +12,9 @@ public class OrderBodyRequest {
     private Color color;
     private int track;
 
+    public OrderBodyRequest(String firstName, String lastName, String address, int metroStation, String phone, int rentTime, String deliveryDate, String comment, Color color) {
+    }
+
     public String getFirstName() {
         return firstName;
     }

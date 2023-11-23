@@ -1,23 +1,23 @@
 package courier.body;
 
-public class Body {
+public class CourierBody {
     private String login;
     private String password;
     private String firstName;
     private String id;
 
 
-    public Body(String login, String password, String firstName) {
+    public CourierBody(String login, String password, String firstName) {
         this.login = login;
         this.password = password;
         this.firstName = firstName;
     }
 
-    public Body(String login, String password) {
+    public CourierBody(String login, String password) {
         this.login = login;
         this.password = password;
     }
-    public Body() {}
+    public CourierBody() {}
     public String getLogin() {
         return login;
     }

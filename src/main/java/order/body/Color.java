@@ -5,6 +5,9 @@ public class Color {
 
     public Color() {
     }
+    public Color(String color) {
+        this.colors = color;
+    }
 
     public String getColor() {
         return colors;
