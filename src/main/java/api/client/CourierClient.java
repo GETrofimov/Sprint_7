@@ -52,7 +52,7 @@ public class CourierClient {
                 .body("id", equalTo(courierId));
     }
 
-    @Step
+    @Step("Extract and return courier Id")
     public int setId(CourierBody courierBody) {
         int courierId = sendLoginRequest(courierBody).then().extract().body().path("id");
         return courierId;

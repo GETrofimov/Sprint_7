@@ -6,6 +6,7 @@ import courier.body.CourierBody;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +16,7 @@ import static courier.constants.Credentials.*;
 
 @RunWith(Parameterized.class)
 public class CourierCreateValidationTest extends CourierClient {
+    private int courierId;
     private CourierBody courierBody;
 
     public CourierCreateValidationTest(String login, String password) {
@@ -36,8 +38,15 @@ public class CourierCreateValidationTest extends CourierClient {
     @Test
     @DisplayName("Проверка создания и попытки авторизации курьера без обязательных атрибутов")
     @Description("Проверка создания курьера без обязательных атрибутов, попытка авторизации без обязательных атрибутов")
-    public void createLoginCourierWithoutParams() {
+    public void createCourierWithoutParams() {
         Response responseCreate = sendCreateCourierRequest(courierBody);
         assertCreateCourierFieldsValidation(responseCreate);
+    }
+    @After
+    public void cleanData() {
+        try {
+            courierId = setId(courierBody);
+            sendDeleteCourierRequest(courierId);
+        } catch (Exception e) {}
     }
 }

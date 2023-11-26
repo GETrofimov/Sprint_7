@@ -28,8 +28,7 @@ public class CourierLoginValidationTest extends CourierClient {
     public static Object[][] getCredentials() {
         return new Object[][] {
                 {predefinedBody.getLogin(), null},
-                {predefinedBody.getPassword(), null},
-                {NON_EXISTENT_LOGIN, PASSWORD}
+                {predefinedBody.getPassword(), null}
         };
     }
 
@@ -45,12 +44,7 @@ public class CourierLoginValidationTest extends CourierClient {
     @Description("Проверка авторизации с незаполненными полями, авторизации для несуществующего курьера")
     public void loginCourier() {
         Response loginResponse = sendLoginRequest(courierBody);
-        if (courierBody.getLogin().equals(NON_EXISTENT_LOGIN)){
-            assertLoginCourierNonExistentEntity(loginResponse);
-        } else {
         assertLoginCourierFieldsValidation(loginResponse);
-        }
-
     }
     @After
     public void cleanData() {

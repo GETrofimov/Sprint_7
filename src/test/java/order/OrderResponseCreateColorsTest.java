@@ -20,7 +20,6 @@ import static order.constants.RentPeriods.TWO_DAYS;;
 
 @RunWith(Parameterized.class)
 public class OrderResponseCreateColorsTest extends OrdersClient {
-    private int trackNumber;
     private OrderBodyRequest orderBodyRequest;
 
     public OrderResponseCreateColorsTest(String firstName, String lastName, String address, int metroStation, String phone, int rentTime, String deliveryDate, String comment, String color) {
@@ -30,9 +29,9 @@ public class OrderResponseCreateColorsTest extends OrdersClient {
     @Parameterized.Parameters
     public static Object[][] getData() {
         return new Object[][] {
-                {FIRST_NAME, LAST_NAME, ADRESS, SOKOLNIKI, PHONE, TWO_DAYS, DELIVERY_DATE, COMMENT, Colors.BLACK},
-                {FIRST_NAME, LAST_NAME, ADRESS, SOKOLNIKI, PHONE, TWO_DAYS, DELIVERY_DATE, COMMENT, GREY},
-                {FIRST_NAME, LAST_NAME, ADRESS, SOKOLNIKI, PHONE, TWO_DAYS, DELIVERY_DATE, COMMENT, null}
+                {FIRST_NAME, LAST_NAME, ADDRESS, SOKOLNIKI, PHONE, TWO_DAYS, DELIVERY_DATE, COMMENT, Colors.BLACK},
+                {FIRST_NAME, LAST_NAME, ADDRESS, SOKOLNIKI, PHONE, TWO_DAYS, DELIVERY_DATE, COMMENT, GREY},
+                {FIRST_NAME, LAST_NAME, ADDRESS, SOKOLNIKI, PHONE, TWO_DAYS, DELIVERY_DATE, COMMENT, null}
         };
     }
 
