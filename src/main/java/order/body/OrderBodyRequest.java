@@ -27,10 +27,6 @@ public class OrderBodyRequest {
         this.color = new ArrayList<String>();
     }
 
-    public OrderBodyRequest() {
-
-    }
-
     public String getFirstName() {
         return firstName;
     }
