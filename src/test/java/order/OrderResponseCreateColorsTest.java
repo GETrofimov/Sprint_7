@@ -5,7 +5,6 @@ import api.client.OrdersClient;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
-import order.body.Color;
 import order.body.OrderBodyRequest;
 import order.constants.Colors;
 import org.junit.Before;
@@ -23,7 +22,9 @@ public class OrderResponseCreateColorsTest extends OrdersClient {
     private OrderBodyRequest orderBodyRequest;
 
     public OrderResponseCreateColorsTest(String firstName, String lastName, String address, int metroStation, String phone, int rentTime, String deliveryDate, String comment, String color) {
-        this.orderBodyRequest = new OrderBodyRequest(firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, comment, new Color(color));
+        this.orderBodyRequest = new OrderBodyRequest(firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, comment);
+        this.orderBodyRequest.setColor(color);
+
     }
 
     @Parameterized.Parameters

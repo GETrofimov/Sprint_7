@@ -1,5 +1,8 @@
 package order.body;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OrderBodyRequest {
     private String firstName;
     private String lastName;
@@ -9,10 +12,23 @@ public class OrderBodyRequest {
     private int rentTime;
     private String deliveryDate;
     private String comment;
-    private Color color;
+    private List<String> color;
     private int track;
 
-    public OrderBodyRequest(String firstName, String lastName, String address, int metroStation, String phone, int rentTime, String deliveryDate, String comment, Color color) {
+    public OrderBodyRequest(String firstName, String lastName, String address, int metroStation, String phone, int rentTime, String deliveryDate, String comment) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.metroStation = metroStation;
+        this.phone = phone;
+        this.rentTime = rentTime;
+        this.deliveryDate = deliveryDate;
+        this.comment = comment;
+        this.color = new ArrayList<String>();
+    }
+
+    public OrderBodyRequest() {
+
     }
 
     public String getFirstName() {
@@ -79,17 +95,17 @@ public class OrderBodyRequest {
         this.comment = comment;
     }
 
-    public Color getColor() {
+    public List<String> getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
-        this.color = color;
+    public void setColor(String color) {
+        this.color.add(color);
     }
-
     public int getTrack() {
         return track;
     }
+
     public void setTrack(int track) {
         this.track = track;
     }

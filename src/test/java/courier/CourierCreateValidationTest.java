@@ -16,7 +16,6 @@ import static courier.constants.Credentials.*;
 
 @RunWith(Parameterized.class)
 public class CourierCreateValidationTest extends CourierClient {
-    private int courierId;
     private CourierBody courierBody;
 
     public CourierCreateValidationTest(String login, String password) {
@@ -44,9 +43,9 @@ public class CourierCreateValidationTest extends CourierClient {
     }
     @After
     public void cleanData() {
-        try {
-            courierId = setId(courierBody);
+        Integer courierId = setId(courierBody);
+        if(courierId != null) {
             sendDeleteCourierRequest(courierId);
-        } catch (Exception e) {}
+        }
     }
 }
